@@ -5,12 +5,7 @@ const Post = require("../models/Post");
 //CREATE POST
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
-  if (!newPost.title || !newPost.description || !newPost.username || !newPost.categories) {
-    return res.status(401).json({
-      success: false,
-      error: "Please provide all required fields"
-    })
-  }
+
   try {
     const savedPost = await newPost.save();
     return res.status(200).json({
