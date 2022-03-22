@@ -29,7 +29,7 @@ app.post("/api/upload", async (req, res) => {
     res.json({ msg: " Uploaded !!!!!!" })
   } catch (error) {
     console.log(error)
-    res.status(500).json({ err: "Somthing Went Wrong" })
+    res.status(500).json({ err: "Something Went Wrong" })
   }
 })
 
