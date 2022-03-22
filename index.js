@@ -10,6 +10,7 @@ const categoryRoute = require("./routes/categories");
 const { cloudinary } = require("./utils/cloudinary");
 
 
+//express 
 
 const app = express();
 dotenv.config();
