@@ -39,7 +39,7 @@ app.post("/api/upload", async (req, res) => {
       })
 
     const url = uploadedResponse.secure_url
-    res.json({ msg: " Uploaded !!!!!!", url: url })
+    res.json({ msg: " Image Uploaded !!!!!!", url: url })
   } catch (error) {
     console.log(error)
     res.status(500).json({ err: "Something Went Wrong" })
