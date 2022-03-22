@@ -53,7 +53,7 @@ mongoose.connect(process.env.MONGO_URL, {
   useFindAndModify: true
 })
   .then(console.log("Connected to MongoDB"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err))
 
 app.use("/api/login", loginRoute);
 app.use("/api/auth", authRoute);
