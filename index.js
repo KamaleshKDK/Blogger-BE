@@ -13,7 +13,11 @@ const { cloudinary } = require("./utils/cloudinary");
 
 const app = express();
 dotenv.config();
-app.use(cors())
+
+app.use(cors({
+  origin: "*"
+}));
+
 
 // app.use(function (req, res, next) {
 //     res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
