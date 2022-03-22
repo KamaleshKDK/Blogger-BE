@@ -13,9 +13,15 @@ const { cloudinary } = require("./utils/cloudinary");
 
 const app = express();
 dotenv.config();
-app.use(cors({ origin: "*" }));
+app.use(cors())
+
+// app.use(function (req, res, next) {
+//     res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
+//     next()
+//   })
+
 app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }))
+app.use(express.urlencoded({ limit: '50mb', extended: false }))
 
 
 app.post("/api/upload", async (req, res) => {
@@ -25,8 +31,9 @@ app.post("/api/upload", async (req, res) => {
       upload(fileStr, {
         upload_preset: "blog_image"
       })
-    console.log(uploadedResponse)
-    res.json({ msg: " Uploaded !!!!!!" })
+    console.log(uploadedResponse.secure_url)
+    const url = uploadedResponse.secure_url
+    res.json({ msg: " Uploaded !!!!!!" , url:url})
   } catch (error) {
     console.log(error)
     res.status(500).json({ err: "Something Went Wrong" })
