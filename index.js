@@ -12,7 +12,7 @@ const { cloudinary } = require("./utils/cloudinary");
 const app = express();
 dotenv.config();
 
-app.use(cors());
+app.use(cors("https://my-blogger-kamalesh-k13h11.netlify.app/"));
 
 app.use(express.json({ limit: "50mb", extended: true }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
@@ -25,7 +25,7 @@ app.post("/api/upload", async (req, res) => {
     });
 
     const url = uploadedResponse.secure_url;
-
+    console.log(uploadedResponse);
     res.json({ msg: " Image Uploaded !!!!!!", url: url });
   } catch (error) {
     console.log(error);
