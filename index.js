@@ -14,7 +14,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: true,
+    origin: "https://my-blogger-kamalesh-k13h11.netlify.app/",
     credentials: true,
   })
 );
