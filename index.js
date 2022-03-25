@@ -1,3 +1,5 @@
+response.header("Access-Control-Allow-Origin", "*");
+
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -14,7 +16,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: "https://my-blogger-kamalesh-k13h11.netlify.app/",
+    origin: "*",
     credentials: true,
   })
 );
