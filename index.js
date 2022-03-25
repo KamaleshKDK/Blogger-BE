@@ -13,7 +13,11 @@ const { cloudinary } = require("./utils/cloudinary");
 const app = express();
 dotenv.config();
 
-app.use(cors())
+app.use(cors({
+    origin : true,
+    credentials : true
+}));
+
 app.use((req, res, next) => {
   res.setHeader('Acces-Control-Allow-Origin', '*');
   res.setHeader('Acces-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
