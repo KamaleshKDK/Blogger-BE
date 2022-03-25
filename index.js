@@ -1,5 +1,3 @@
-response.header("Access-Control-Allow-Origin", "*");
-
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -20,13 +18,6 @@ app.use(
     credentials: true,
   })
 );
-
-app.use((req, res, next) => {
-  res.setHeader("Acces-Control-Allow-Origin", "*");
-  res.setHeader("Acces-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE");
-  res.setHeader("Acces-Contorl-Allow-Methods", "Content-Type", "Authorization");
-  next();
-});
 
 // app.use(function (req, res, next) {
 //     res.setHeader('Cross-Origin-Resource-Policy', 'same-site')
