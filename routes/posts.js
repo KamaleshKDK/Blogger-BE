@@ -5,19 +5,19 @@ const Post = require("../models/Post");
 //CREATE POST
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
-console.log("create post")
+  console.log("create post");
   try {
     const savedPost = await newPost.save();
     return res.status(200).json({
       success: true,
-      message: 'Post created successfully',
-      savedPost
-    })
+      message: "Post created successfully",
+      savedPost,
+    });
   } catch (err) {
     return res.status(500).json({
       success: false,
-      error
-    })
+      error: err,
+    });
   }
 });
 
